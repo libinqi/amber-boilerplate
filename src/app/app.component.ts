@@ -11,8 +11,8 @@ import {ComponentsHelper } from 'ng2-bootstrap';
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
-    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
-      <div class="additional-bg"></div>
+    <main>
+      <div class="a-main-login"></div>
       <router-outlet></router-outlet>
     </main>
   `
@@ -22,9 +22,6 @@ export class App {
   isMenuCollapsed: boolean = false;
 
   constructor(private _state: GlobalState,
-              private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner,
-              private _config: BaThemeConfig,
               private viewContainerRef: ViewContainerRef) {
 
     this._fixModals();
