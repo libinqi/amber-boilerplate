@@ -1,15 +1,22 @@
-.a-main-login{
-    background-image: url(/assets/img/angular-logo.png);
-    background-size: 64px 64px;
+.a-main-login {
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+}
+
+.a-main-login {
+  img {
     width: 64px;
     height: 64px;
-    margin: 10px;
+  }
 }
-.a-main{
-    width: 100%;    
+
+.a-main {
+  width: 100%;
 }
-.a-main{
-    .a-content{
-        margin: 0px auto;
-    }
+
+.a-main {
+  .a-content {
+    margin: 0px auto;
+  }
 }

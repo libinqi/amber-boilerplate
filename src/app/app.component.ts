@@ -12,7 +12,9 @@ import {ComponentsHelper } from 'ng2-bootstrap';
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
     <main>
-      <div class="a-main-login"></div>
+      <div class="a-main-login">
+       <img src="assets/img/angular-logo.png">
+      </div>
       <router-outlet></router-outlet>
     </main>
   `

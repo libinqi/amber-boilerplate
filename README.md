@@ -1,7 +1,4 @@
-# Amber Boilerplate framework based on Angular 2, Bootstrap 4 and Webpack
-
-## 特性
-基于Angular 2, Bootstrap 4, Webpack 模块化开发模板
+# Amber Boilerplate是一个基于Angular 2, Bootstrap 4和Webpack的 模块化开发模板
 
 ## 功能
 * TypeScript
