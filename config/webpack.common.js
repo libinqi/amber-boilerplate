@@ -76,8 +76,7 @@ module.exports = function (options) {
       extensions: ['.ts', '.js', '.css', '.scss', '.json'],
 
       // An array of directory names to be resolved to the current directory
-      modules: [helpers.root('src'), helpers.root('node_modules')],
-
+      modules: [helpers.root('src'), helpers.root('node_modules')]
     },
 
     /*
@@ -87,8 +86,7 @@ module.exports = function (options) {
      */
     module: {
 
-      rules: [
-        {
+      rules: [{
           test: /\.ts$/,
           loader: 'string-replace-loader',
           query: {
@@ -134,8 +132,8 @@ module.exports = function (options) {
          */
         {
           test: /\.css$/,
-          // loaders: ['to-string-loader', 'css-loader']
-          use: ['raw-loader']
+          loaders: ['to-string-loader', 'css-loader']
+            // use: ['raw-loader']
         },
 
         {
@@ -196,7 +194,10 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-      new ExtractTextPlugin({filename: 'initial.css', allChunks: true}),
+      new ExtractTextPlugin({
+        filename: 'initial.css',
+        allChunks: true
+      }),
 
       new AssetsPlugin({
         path: helpers.root('dist'),
@@ -245,10 +246,12 @@ module.exports = function (options) {
        *
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
-      new CopyWebpackPlugin([
-        { from: 'src/assets', to: 'assets' },
-        { from: 'src/meta'}
-      ]),
+      new CopyWebpackPlugin([{
+        from: 'src/assets',
+        to: 'assets'
+      }, {
+        from: 'src/meta'
+      }]),
 
       /*
        * Plugin: HtmlWebpackPlugin
@@ -314,6 +317,7 @@ module.exports = function (options) {
         $: "jquery",
         jQuery: "jquery",
         "window.jQuery": "jquery",
+        "window.$": "jquery",
         Tether: "tether",
         "window.Tether": "tether",
         Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",

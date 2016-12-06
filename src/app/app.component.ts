@@ -9,12 +9,9 @@ import {ComponentsHelper } from 'ng2-bootstrap';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('normalize.css'), require('./app.scss')],
+  styles: [require('normalize.css'), require('./app.css')],
   template: `
     <main>
-      <div class="a-main-login">
-       <img src="assets/img/angular-logo.png">
-      </div>
       <router-outlet></router-outlet>
     </main>
   `

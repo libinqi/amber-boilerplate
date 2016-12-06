@@ -4,10 +4,8 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   styles: [],
   template: `
-    <div class="a-main">
-      <div class="a-content">
+    <div>
         <router-outlet></router-outlet>
-      </div>
     </div>
     `
 })
