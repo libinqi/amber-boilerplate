@@ -1,0 +1,64 @@
+#taskbar {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  padding: 5px;
+  background: rgba(white, 0.7);
+  font-size: 0.9rem;
+  padding: 0 1rem 0 0;
+  line-height: 1.9;
+
+  .fa-apple {
+    margin: 0 0.7em;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  > *{
+    position: relative;
+    padding: 0 0.3em;
+    vertical-align: middle;
+  }
+}
+
+
+div {
+  cursor: default;
+}
+
+div img{
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+div .selected {
+  background-color: #1964EF;
+  color: white;
+}
+
+ul {
+  display: none;
+}
+
+.selected ul {
+  display: block;
+  position: absolute;
+  background: rgba(white, 0.5);
+  list-style: none;
+  top: 14px;
+  left: 0;
+  padding-left: 0;
+}
+
+li {
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 10px;
+  color: black;
+}
+
+li:hover {
+  background-color: #1964EF;
+  color: white;
+}

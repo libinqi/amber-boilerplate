@@ -1,23 +1,22 @@
 <div id="dashboard" #dashboardDiv >
 
-<template ngFor let-item [ngForOf]="winlist" let-i="index" >
+<template ngFor let-item [ngForOf]="winList" let-i="index" >
   <template [ngIf]="item.opened">
-    <template [ngIf]="item.iframe">
-
+    <template [ngIf]="item.url">
       <div [id]="item.id" class="intrinsic-container" (resize)="winresize()">
-        <iframe [src]="item.iframe | safe" allowfullscreen></iframe>
+        <iframe [src]="item.url | safe" allowfullscreen></iframe>
       </div>
-
-
     </template>
-    <template [ngIf]="!item.iframe">
-      <div [id]="item.id" class="mywin {{item.id}}">{{item.text}}</div>
+    <template [ngIf]="!item.url">
+      <div [id]="item.id" class="mywin {{item.id}}">无效的链接</div>
     </template>
   </template>
 </template>
 
-<app-dock [winlist]="winlist" [iconWidth]="iconWidth" (select)="dockSelect($event)"></app-dock>
+<app-navbar [navItems]="navItems"  [iconWidth]="iconWidth"></app-navbar>
 
-<app-navbar [navitems]="navitems" ></app-navbar>
+<app-dock [dockItems]="dockItems" [iconWidth]="iconWidth" [docWidth]="docWidth" [docHeight]="docHeight"></app-dock>
+
+<app-taskbar [winList]="winList"  [iconWidth]="iconWidth"></app-taskbar>
 
 </div>

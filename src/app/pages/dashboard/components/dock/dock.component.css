@@ -1,6 +1,10 @@
 #dock {
 	width: 100%;
 	position: absolute;
-	bottom: 40px;
+	bottom: 50px;
 	text-align: center;
+}
+
+#dock img{
+	margin-right: 5px;
 }

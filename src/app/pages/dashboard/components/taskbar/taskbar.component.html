@@ -1,0 +1,10 @@
+<div id="taskbar" (click)="clickOnMain()">
+  <i class="fa fa-apple"></i>
+  <strong>Amber-OS</strong>
+  <template ngFor let-item [ngForOf]="winList" let-i="index">
+    <span [class.selected]="item.selected" style="padding: 4px;" *ngIf="item.opened">
+      <div (click)="clickOnTitle(item,$event)" style="display:inline"><img src="{{item.image}}" [width]="iconWidth/4" title="{{item.title}}"/>{{item.title}}</div>
+    </span>
+  </template>
+  <div style="float:right">{{heure}}</div>
+</div>

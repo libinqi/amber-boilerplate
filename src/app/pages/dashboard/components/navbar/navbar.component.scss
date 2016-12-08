@@ -1,59 +1,60 @@
 #navbar {
   width: 100%;
+  height: 100%;
   position: absolute;
+  top: 0px;
   bottom: 0px;
   margin: 0;
-  padding: 5px;
-  background: rgba(white, 0.7);
+  padding: 5px 2px 5px 2px;
+  background: transparent;
   font-size: 0.9rem;
-  padding: 0 1rem 0 0;
   line-height: 1.9;
-
-  .fa-apple {
-    margin: 0 0.7em;
-    padding: 0;
-    font-size: 1rem;
+  -webkit-column-width: 100px;
+  -moz-column-width: 100px;
+  -webkit-column-gap: 0px;
+  -moz-column-gap: 0px;
+  span {
+    display: inline-block;
+    *display: inline;
+    text-decoration: none;
+    border: solid 1px transparent;
+    padding: 5px;
+    margin: 10px;
+    width: 89px;
+    height: 89px;
+    color: #ffffff;
+    text-shadow: 0.2em 0.1em 0.3em #000000;
+    font-family: '微软雅黑';
   }
-
-  > *{
-    position: relative;
-    padding: 0 0.3em;
-    vertical-align: middle;
+  span:hover {
+    border: solid 1px #bbd6ec;
+    -webkit-border-radius: 3px;
+    box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    background:rgba(92, 170, 232,0.8);
   }
 }
 
+#navbar {
+  writing-mode: tb-lr;
+}
+
+#navbar span {
+  writing-mode: lr-tb;
+}
 
 div {
+  display: block;
+  width: 100%;
+  height: 100%;
   cursor: default;
+  text-align: center;
 }
 
 div .selected {
-  background-color: #1964EF;
-  color: white;
-}
-
-ul {
-  display: none;
-}
-
-.selected ul {
-  display: block;
-  position: absolute;
-  background: rgba(white, 0.5);
-  list-style: none;
-  top: 14px;
-  left: 0;
-  padding-left: 0;
-}
-
-li {
-  white-space: nowrap;
-  padding-left: 5px;
-  padding-right: 10px;
-  color: black;
-}
-
-li:hover {
-  background-color: #1964EF;
-  color: white;
+  border: solid 1px #bbd6ec;
+  -webkit-border-radius: 3px;
+  box-shadow: inset 0 0 1px #fff;
+  -webkit-box-shadow: inset 0 0 1px #fff;
+  background:rgba(92, 170, 232,0.6);
 }

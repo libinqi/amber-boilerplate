@@ -1,5 +1,5 @@
 <div id="dock" #dockDiv >
-  <template ngFor let-item [ngForOf]="winlist" let-i="index" >
+  <template ngFor let-item [ngForOf]="dockItems" let-i="index" >
     <img src="{{item.image}}" [width]="iconWidth/2" (click)="dockSelect(item.id)" title="{{item.title}}"/>
   </template>
 </div>

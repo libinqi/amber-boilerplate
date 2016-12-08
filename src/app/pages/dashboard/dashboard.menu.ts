@@ -1,94 +1,40 @@
-export const MENU_CONFIG ={
-  'iconWidth': 100,
-  'navbar' : [
-    {
-      "label": "User",
-      "submenu":[{
-        "label": "Disconnect",
-        "link":"/login/logout.php"
-      }]
-    },
-    {
-      "label": "File",
-      "submenu": [
-        {"label": "New Window"},
-        {"label": "New File"},
-        {"label": "Save As"},
-        {"label": "Save All"},
-        {"label": "Close"},
-        {"label": "Close All"}
-      ]
-    },
-    {
-      "label": "Edit",
-      "submenu": [
-        {"label": "New Window"},
-        {"label": "New File"}
-      ]
-    },
-    {
-      "label": "View",
-      "submenu": [
-        {"label": "Close"},
-        {"label": "Close All"}
-      ]
-    }
-  ],
-  'dock' : {
-    'username': [
-      {
-    	  "id": "about",
-    	  "image": "/assets/flatjoy-circle-deviantart/Apple.png",
-    	  "title": "Présentation",
-    	  "text": "Bienvenue, sur l'interface de gestion de Bureau virtuel. Spécialement pour le user 'username'",
-    	  "opened": false,
-    	  "selected": false,
-    	  "ref": null
-    	}
-    ],
-    'default' : [
-      {
-    	  "id": "about",
-    	  "image": "/assets/flatjoy-circle-deviantart/Apple.png",
-    	  "title": "Présentation",
-    	  "text": "Bienvenue, sur l'interface de gestion de Bureau virtuel. N'oubliez pas de changer les url d'iframe et de configurer vos propres icones",
-    	  "opened": false,
-    	  "selected": false,
-    	  "ref": null
-    	},
-    	{
-    	  "id": "jeedom",
-    	  "image": "/assets/flatjoy-circle-deviantart/Camcorder.png",
-    	  "iframe": "http://your-cam-recorder",
-    	  "title": "JeeDom"
-    	},
-    	{
-    	  "id": "elfinder",
-    	  "image": "/assets/flatjoy-circle-deviantart/Drawers.png",
-    	  "iframe": "http://your-finder",
-    	  "title": "Finder"
-    	},
-    	{
-    	  "id": "omv",
-    	  "image": "/assets/flatjoy-circle-deviantart/Chip.png",
-    	  "iframe": "http://your-omv-ip/",
-    	  "title": "OpenMediaVault",
-    	  "opened": false,
-    	  "selected": false,
-    	  "ref": null
-    	},
-    	{
-    	  "id": "network",
-    	  "image": "/assets/flatjoy-circle-deviantart/Devices.png",
-    	  "iframe": "http://your-router",
-    	  "title": "Réseau"
-    	},
-    	{
-    	  "id": "sickrage",
-    	  "image": "/assets/flatjoy-circle-deviantart/Cone.png",
-    	  "iframe": "http://your-sickrage-install/",
-    	  "title": "SickRage"
-    	}
-    ]
-  }
+export const MENU_CONFIG = {
+	'iconWidth': 100,
+	'menu': [
+		{
+			"id": "BaseSetting",
+			"title": "基本设置",
+			"image": "/assets/icons/flatjoy-circle-deviantart/Settings.png",
+			"url": "http://www.baidu.com",
+			"submenu": [
+				{ "id": "system", "title": "系统设置", "image": "/assets/icons/flatjoy-circle-deviantart/Apple.png", "url": "http://www.baidu.com" },
+				{ "id": "company", "title": "企业设置", "image": "/assets/icons/flatjoy-circle-deviantart/House.png", "url": "http://www.baidu.com" }
+			],
+			"dock": [],
+			"tools": []
+		},
+		{
+			"id": "Sale",
+			"title": "销售",
+			"image": "/assets/icons/flatjoy-circle-deviantart/Sale.png",
+			"url": "",
+			"submenu": [],
+			"dock": [
+				{ "id": "ticket", "title": "售票", "image": "/assets/icons/flatjoy-circle-deviantart/Ticket.png", "url": "http://localhost:3000/#/pages/sales/ticket" },
+				{ "id": "refund", "title": "退票", "image": "/assets/icons/flatjoy-circle-deviantart/Ticket_alt.png", "url": "http://www.baidu.com" }
+			],
+			"tools": []
+		},
+		{
+			"id": "CardManage",
+			"title": "卡证办理",
+			"image": "/assets/icons/flatjoy-circle-deviantart/Money.png",
+			"url": "",
+			"submenu": [],
+			"dock": [
+				{ "id": "register", "title": "办卡", "image": "/assets/icons/flatjoy-circle-deviantart/Credit Card.png", "url": "http://localhost:3000/#/pages/card" },
+			],
+			"tools": []
+		}
+	]
 };

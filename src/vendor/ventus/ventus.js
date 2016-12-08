@@ -1186,6 +1186,7 @@ define('ventus/wm/window', [
         if (options.content) {
             this.$content.append(options.content);
         }
+        this.options = options;
         this.$titlebar = this.el.find('header');
         this.width = options.width || 400;
         this.height = options.height || 200;
@@ -1263,7 +1264,7 @@ define('ventus/wm/window', [
                     e.stopPropagation();
                     e.preventDefault();
                     if (this.enabled) {
-                        this.minimize();
+                        this.minimize(e);
                     }
                 },
                 '.wm-window-title button mousedown': function (e) {
@@ -1341,12 +1342,12 @@ define('ventus/wm/window', [
             return this._minimized;
         },
         set minimized(value) {
-            if (value) {
-                this._restoreMinimized = this.stamp();
-                this.signals.emit('minimize', this, this._restoreMinimized);
-            } else {
-                this.signals.emit('restore', this, this._restoreMinimized);
-            }
+            // if (value) {
+            //     this._restoreMinimized = this.stamp();
+            //     this.signals.emit('minimize', this, this._restoreMinimized);
+            // } else {
+            //     this.signals.emit('restore', this, this._restoreMinimized);
+            // }
             this._minimized = value;
         },
         set active(value) {
@@ -1528,12 +1529,13 @@ define('ventus/wm/window', [
             this.maximized = !this.maximized;
             return this;
         },
-        minimize: function () {
-            this.el.addClass('minimizing');
-            this.el.onTransitionEnd(function () {
-                this.el.removeClass('minimizing');
-            }, this);
+        minimize: function (e) {
+            // this.el.addClass('minimizing');
+            // this.el.onTransitionEnd(function () {
+            //     this.el.removeClass('minimizing');
+            // }, this);
             this.minimized = !this.minimized;
+            this.signals.emit('minimized', this, e);
             return this;
         },
         focus: function () {

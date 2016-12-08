@@ -1,22 +1,29 @@
-import { MixinObject } from "./mixin";
+import { MixinObject } from './mixin';
+import { DockItem } from './dock-item';
 
 export class NavbarItem extends MixinObject {
-  public label: string = "";
+  public id: string = '';
+  public title: string = '';
+  public image: string = '';
+  public submenus: NavbarSubItem[] = [];
+  public dockmenus: DockItem[] = [];
+  public url: string = '';
+  public opened: boolean = false;
   public selected: boolean = false;
-  public submenu: Array<NavbarSubItem> = [];
-  public action:any = null;
-  public link:string = "";
-  public routerlink:string = "";
-  constructor(obj ?: any){
+  public ref: any = null;
+  constructor(obj?: any) {
     super();
     this.mixin(obj);
   }
 }
 
 export class NavbarSubItem extends MixinObject {
-  public label:string = "";
-  public action:any = null;
-  constructor(obj ?: any){
+  public id: string = '';
+  public title: string = '';
+  public image: string = '';
+  public url: string = '';
+  public routerlink: string = '';
+  constructor(obj?: any) {
     super();
     this.mixin(obj);
   }
