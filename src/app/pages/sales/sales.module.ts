@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CoreModule } from '../core/core.module';
+import { CoreModule } from '../../core/core.module';
 
 import { Sales } from './sales.component';
 import { SaleTicket } from './components/ticket/sale-ticket.component';

@@ -15,6 +15,7 @@ import { routing } from './app.routing';
 import { App } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
+import { CoreModule } from './core/core.module';
 import { PagesModule } from './pages/pages.module';
 
 // Application wide providers
@@ -43,6 +44,7 @@ type StoreType = {
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    CoreModule.forRoot(),
     PagesModule,
     routing
   ],

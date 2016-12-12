@@ -8,7 +8,7 @@ export class LoadingService {
     constructor() {
     }
 
-    start(message: string) {
+    start(message?: string) {
         this.message = message || '正在提交您的请求，请稍后...';
         this.isLoading = true;
     }

@@ -6,7 +6,7 @@ import {
   ViewChild
 } from '@angular/core';
 import * as _ from 'lodash';
-import { LoadingService } from '../../../core/services/loading.service';
+import { LoadingService } from '../../../../core/services/loading.service';
 
 @Component({
   selector: 'sale-ticket',
@@ -16,6 +16,9 @@ import { LoadingService } from '../../../core/services/loading.service';
 export class SaleTicket {
 
   constructor(private loading: LoadingService) {
+    setTimeout(() => {
+      this.loading.end();
+    }, 5000)
   }
 
   public ngOnInit() {
