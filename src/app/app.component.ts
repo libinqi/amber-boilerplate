@@ -1,7 +1,7 @@
 import './app.loader.ts';
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
 import { GlobalState } from './global.state';
-import {ComponentsHelper } from 'ng2-bootstrap';
+import { ComponentsHelper } from 'ng2-bootstrap';
 /*
  * App Component
  * Top Level Component
@@ -21,7 +21,7 @@ export class App {
   isMenuCollapsed: boolean = false;
 
   constructor(private _state: GlobalState,
-              private viewContainerRef: ViewContainerRef) {
+    private viewContainerRef: ViewContainerRef) {
 
     this._fixModals();
 

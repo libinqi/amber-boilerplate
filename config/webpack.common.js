@@ -212,6 +212,7 @@ module.exports = function (options) {
        * See: https://github.com/s-panferov/awesome-typescript-loader#forkchecker-boolean-defaultfalse
        */
       new ForkCheckerPlugin(),
+
       /*
        * Plugin: CommonsChunkPlugin
        * Description: Shares common code between the pages.

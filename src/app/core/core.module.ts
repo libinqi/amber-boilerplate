@@ -1,18 +1,32 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 
 import { LoadingComponent } from './components/loading.component';
 import { LoadingService } from './services/loading.service';
+import { StateMachineService } from './services/state-machine.service';
+import { HttpClient } from './services/http-client';
 
 const CORE_SERVICES = [
-  LoadingService
+  LoadingService,
+  StateMachineService,
+  HttpClient
 ];
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, HttpModule],
   declarations: [LoadingComponent],
   exports: [LoadingComponent],
-  providers: [LoadingService]
+  providers: [
+    LoadingService,
+    StateMachineService, {
+      provide: HttpClient,
+      useFactory: (backend: XHRBackend, options: RequestOptions) => {
+        return new HttpClient(backend, options);
+      },
+      deps: [XHRBackend, RequestOptions]
+    }
+  ]
 })
 
 export class CoreModule {
@@ -22,7 +36,7 @@ export class CoreModule {
       providers: [
         ...CORE_SERVICES
       ]
-    }
+    };
   }
 
   // constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

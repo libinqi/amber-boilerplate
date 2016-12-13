@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import * as _ from 'lodash';
 import { LoadingService } from '../../../../core/services/loading.service';
+import { BasicService } from '../../services/basic.service';
 
 @Component({
   selector: 'sale-ticket',
@@ -15,13 +16,17 @@ import { LoadingService } from '../../../../core/services/loading.service';
 })
 export class SaleTicket {
 
-  constructor(private loading: LoadingService) {
-    setTimeout(() => {
-      this.loading.end();
-    }, 5000)
+  private productList = [];
+
+  constructor(private basicService: BasicService, private loading: LoadingService) {
+    basicService.init();
   }
 
   public ngOnInit() {
-    this.loading.start();
+    setTimeout(() => {
+      this.productList = this.basicService.productList;
+    }, 2000);
   }
+
+
 }
